@@ -12,17 +12,18 @@
 	<title>Readwits - Home</title>
 </head>
 <body>
+	<!-- Inputs the search bar -->
 	<div class="container">
-	<h1>Readwits</h1>
-	<h3>Find the Book You Want to Read Next</h3>
+		<h1>Readwits</h1>
+		<h3>Find the Book You Want to Read Next</h3>
+		<div class="inputform">
+		<input type="text" id="search-input" placeholder=" Search for books here"><input type="submit" value="Search" id="submit-button">
+		</div>
 
-	<div class="inputform">
-	<form>
-	<input type="text" id="enterText" placeholder=" Search for books here"><input type="submit" value="Search" id="submit-button">
-	</form>
-	</div>
+	<!-- Display the search results -->
+	<div id="output"></div>
 	</div>
 
-<script src="main.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
