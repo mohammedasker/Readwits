@@ -1,19 +1,19 @@
-// Constant variables for input search
-const QUERY = document.querySelector('search-input');
-
-// Event listeners for search bar and search button
-document.querySelector('#submit-button').addEventListener('click', handleResponse);
+// Event listeners for and search button
+document.querySelector('#submit-button').addEventListener('click', searchBook);
 
 // Initiate the fetch
-function handleResponse() {
-	fetch(`https://www.googleapis.com/books/v1/volumes?q=${QUERY}&callback=handleResponse`)
+function searchBook() {
+	let query = document.querySelector('#search-input').value;
+	fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&callback=searchBook`)
       .then((response) => response.text())
       .then((data) => {
-        //document.querySelector('output').innerHTML = data;
-        console.log(data)
+       console.log(data)
       })
       .catch((error) => console.log(error))
 	}
+
+// Filter the search results by author, title, and subtitle
+
 
 	/* 
 	Function for filtering relevant contents...
