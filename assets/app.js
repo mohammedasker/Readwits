@@ -1,34 +1,28 @@
-// Event listeners for and search button
+// Event listeners for the search button
 document.querySelector('#submit-button').addEventListener('click', searchBook);
 
-// Initiate the fetch
+// When user inputs the search bar and clicked search button, start searching
 function searchBook() {
-	let query = document.querySelector('#search-input').value;
+	const query = document.querySelector('#search-input').value;
+	// Initiate the fetch API
 	fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&callback=searchBook`)
       .then((response) => response.text())
       .then((data) => {
-       console.log(data)
+      	// Filter the search results by author, title, and subtitle
+      	let output = '<h2>Search results</h2>';
+      	Object.keys(data).forEach(function(book) {
+      		output += `
+      		<ul>
+	      		<li>Title: ${book.title}</li>
+	      		<li>Author: ${book.authors}</li>
+	      		<li>Subtitle: ${book.subtitle}</li>
+      		</ul>
+      		`;
+      	});
+      	// Display the search result
+		document.querySelector('#output').innerHTML = output;
+	    console.log(data);
       })
-      .catch((error) => console.log(error))
+      // Throw an error message when something went wrong during the search
+      .catch((error) => console.log(error));
 	}
-
-// Filter the search results by author, title, and subtitle
-
-
-	/* 
-	Function for filtering relevant contents...
-	(GET the relevant contents codes)
-
-	fetch("https://www.googleapis.com/books/v1/volumes?q=");
-		.then((response) => response.json())
-		.then(data => {
-			console.log(data)
-		})
-		.catch(error => console.error(error))
-
-	Function for showing results...
-	(Display the results into an item lists code)
-	*/
-
-	//Reference only
-	//"https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"
