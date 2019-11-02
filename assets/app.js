@@ -3,23 +3,24 @@ document.querySelector('#submit-button').addEventListener('click', searchBook);
 
 // When user inputs the search bar and clicked search button, start searching
 function searchBook() {
-	const query = document.querySelector('#search-input').value;
+	let query = document.querySelector('#search-input').value;
 	// Initiate the fetch API
-	fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&callback=searchBook`)
-      .then((res) => res.text())
+	fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
+      .then((res) => res.json())
       .then((data) => {
+            console.log(data);
       	// Filter the search results by author, title, and subtitle
-      	let output = '<h2>Search results</h2>';
-      	Object.keys(data).forEach(function(book) {
+      	let output = "<h2>Search results</h2>";
+      	data.items.forEach(book => {
       		output += `
       		<ul>
-	      		<li>Title: ${book.title}</li>
-	      		<li>Author: ${book.authors}</li>
+	      		<li>Title: ${book.volumeInfo.title}</li>
+	      		<li>Author: ${book.volumeInfo.authors}</li>
       		</ul>
       		`;
       	});
       	// Display the search result
-		document.querySelector('#output').innerHTML = output;
+    		document.querySelector("#output").innerHTML = output;
       	console.log(data);
       })
       // Throw an error message when something went wrong during the search
