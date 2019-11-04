@@ -8,9 +8,8 @@ function searchBook() {
 	fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
       .then((res) => res.json())
       .then((data) => {
-            console.log(data);
       	// Filter the search results by author, title, and subtitle
-      	let output = "<h2>Search results</h2>";
+      	let output = '';
       	data.items.forEach(book => {
       		output += `
           <div class="results-box">
@@ -18,7 +17,7 @@ function searchBook() {
             <img src= ${book.volumeInfo.imageLinks.smallThumbnail}>
 	      		<li><b>Title:</b> ${book.volumeInfo.title}</li>
 	      		<li><b>Author:</b> ${book.volumeInfo.authors}</li>
-            <a href=${book.volumeInfo.canonicalVolumeLink}><button class="book-info">See this book</button></a>
+            <a href=${book.volumeInfo.canonicalVolumeLink}><button class="book-info"><b>See this book</b></button></a>
       		</ul>
           </div>
       		`;
@@ -29,4 +28,7 @@ function searchBook() {
       })
       // Throw an error message when something went wrong during the search
       .catch((error) => console.log(error));
+
+      // Display "Search results of" text when clicked the search button
+      document.querySelector('.text').innerHTML = `Search results of: "${query}"`
 	}

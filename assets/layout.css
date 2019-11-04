@@ -53,9 +53,17 @@ h1, h3 {
 	list-style: none;
 }
 
+#output {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-gap: 2rem;
+}
+
 .book-info {
 	margin-top: 5px;
-	background-color: #28ed28;
+	background-color: #00c807;
 	color: white;
 	border: none;
 	height: 40px;
@@ -66,4 +74,12 @@ h1, h3 {
 
 .book-info:hover {
 	opacity: 0.6;
+}
+
+@media(max-width: 768px){
+	#output {
+		display: grid;
+		grid-template-columns: none;
+		margin-bottom: 50px;
+	}
 }
