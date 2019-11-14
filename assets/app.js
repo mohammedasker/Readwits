@@ -24,7 +24,6 @@ function searchBook() {
       	});
       	// Display the search result
     		document.querySelector("#output").innerHTML = output;
-      	console.log(data);
       })
       // Throw an error message when something went wrong during the search
       .catch((error) => console.log(error));
