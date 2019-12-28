@@ -1,12 +1,12 @@
 # Readwits
 
-Readwits is a free web application that allows you to find a book you want to read next. I created this project to practice Application Protocol Interface(API).
+Readwits is a free web application that allows you to find a book you want to read next. I created this project to practice more JavaScript and trying Application Protocol Interface (API) for the first time. Tools used: HTML, CSS, and JavaScript.
 
 ## Live Demo
 
 You can check the project by the clicking the link below:
 
-[Readwits]("https://mohammedasker.github.io/Readwits/").
+[Readwits](https://mohammedasker.github.io/Readwits/)
 
 ## Getting Started
 
@@ -32,7 +32,7 @@ git clone https://github.com/mohammedasker/Readwits.git
 
 This project is build with vanilla JavaScript. Just clone or download as a zip file and you're good to go.
 
-## User Story (Work-in-progress)
+## User Story (Work-in-Progress)
 
 Here are the things a user can do in this web app:
 
@@ -52,4 +52,4 @@ Currently, I'm not looking for contributors as I'm using this project to practic
 
 ## License
 
-Licensed under the [MIT]("https://github.com/mohammedasker/Readwits/blob/master/LICENSE") license.
+Licensed under the [MIT](https://github.com/mohammedasker/Readwits/blob/master/LICENSE) license.
