@@ -2,7 +2,7 @@
 document.querySelector('#submit-button').addEventListener('click', searchBook);
 
 // When user inputs the search bar and clicked search button, start searching
-function searchBook() {
+function searchBook(event) {
 	let query = document.querySelector('#search-input').value;
 	// Initiate the fetch API
 	fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`)
@@ -29,5 +29,13 @@ function searchBook() {
       .catch((error) => console.log(error));
 
       // Display "Search results of" text when clicked the search button
-      document.querySelector('.text').innerHTML = `Search results of: "${query}"`
+	  document.querySelector('.text').innerHTML = `Search results of: "${query}"`
 	}
+
+// Start searching the lists when user clicks entry key
+document.querySelector("#search-input").addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        document.querySelector("#submit-button").click();
+    }
+});
+

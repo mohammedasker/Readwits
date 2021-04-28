@@ -36,7 +36,8 @@ h1, h3 {
 	height: 40px;
 	width: 20%;
 	opacity: 1;
-    transition: 0.3s;
+	transition: 0.3s;
+	cursor: pointer;
 }
 
 #submit-button:hover {
