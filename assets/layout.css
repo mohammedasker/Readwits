@@ -3,84 +3,85 @@
 }
 
 body {
-	font-family: 'Poppins', sans-serif;
-	font-size: 16px;
-	padding: 0;
-	margin: 0;
-	background-color: #dcedff;
-	min-width: 250px
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  background-color: #dcedff;
+  min-width: 250px;
 }
 .container {
-	width: 80%;
-	margin: auto;
-	overflow: hidden;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
 }
 
-h1, h3 {
-	text-align: center;
+h1,
+h2 {
+  text-align: center;
 }
 
 .inputform {
-	text-align: center;
+  text-align: center;
 }
 
 #search-input {
-	width: 80%;
-	height: 40px;
+  width: 80%;
+  height: 40px;
 }
 
 #submit-button {
-	background-color: #0000ff;
-	color: white;
-	border: none;
-	height: 40px;
-	width: 20%;
-	opacity: 1;
-	transition: 0.3s;
-	cursor: pointer;
+  background-color: #0000ff;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 20%;
+  opacity: 1;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 #submit-button:hover {
-	opacity: 0.6;
+  opacity: 0.6;
 }
 
 .results-box {
-	background: #f4f4f4;
-	padding: 5px 0px 5px 0px;
-	margin-bottom: 10px;
+  background: #f4f4f4;
+  padding: 5px 0px 5px 0px;
+  margin-bottom: 10px;
 }
 
-.results-box li{
-	list-style: none;
+.results-box li {
+  list-style: none;
 }
 
 #output {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-gap: 2rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 2rem;
 }
 
 .book-info {
-	margin-top: 5px;
-	background-color: #00c807;
-	color: white;
-	border: none;
-	height: 40px;
-	width: 120px;
-	opacity: 1;
-    transition: 0.3s;
+  margin-top: 5px;
+  background-color: #00c807;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 120px;
+  opacity: 1;
+  transition: 0.3s;
 }
 
 .book-info:hover {
-	opacity: 0.6;
+  opacity: 0.6;
 }
 
-@media(max-width: 768px){
-	#output {
-		display: grid;
-		grid-template-columns: none;
-		margin-bottom: 50px;
-	}
+@media (max-width: 768px) {
+  #output {
+    display: grid;
+    grid-template-columns: none;
+    margin-bottom: 50px;
+  }
 }
